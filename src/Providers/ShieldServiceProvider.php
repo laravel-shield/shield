@@ -3,6 +3,7 @@
 namespace Shield\Shield\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Shield\Shield\Http\Middleware\Shield;
 
 /**
  * Class ShieldServiceProvider
