@@ -41,6 +41,18 @@ class BasicAuthTest extends TestCase
     }
 
     /** @test */
+    public function it_will_fail_if_invalid_headers()
+    {
+        $request = $this->request();
+        $request->headers->add([
+            'PHP-AUTH-USER' => 'user',
+            'PHP-AUTH-PASS' => 'pass',
+        ]);
+
+        Assert::assertFalse($this->service->checkBasic($request, 'user', 'pass'));
+    }
+
+    /** @test */
     public function it_will_pass_if_correct_credentials()
     {
         $request = $this->request();
