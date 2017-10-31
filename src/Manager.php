@@ -17,7 +17,7 @@ class Manager
         $instance = $this->validate($service);
 
         if ($this->checkHeaders($instance->headers(), $request)) {
-            return $instance->verify($request, collect(config('shield.services.' . $service . 'options', [])));
+            return $instance->verify($request, collect(config('shield.services.' . $service . '.options', [])));
         }
 
         return false;
