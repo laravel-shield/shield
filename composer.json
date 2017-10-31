@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=7.0.0",
         "laravel/framework": "^5.5"
     },
     "require-dev": {
@@ -23,6 +24,19 @@
     "autoload-dev": {
         "psr-4": {
             "Shield\\Shield\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shield\\Shield\\Providers\\ShieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "platform": {
+            "php": "7.0"
         }
     }
 }
